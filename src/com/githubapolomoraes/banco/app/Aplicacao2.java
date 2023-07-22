@@ -3,7 +3,9 @@ package com.githubapolomoraes.banco.app;
 import com.githubapolomoraes.banco.modelo.Pessoa;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Aplicacao2 {
     public static void main(String[] args) {
@@ -11,7 +13,8 @@ public class Aplicacao2 {
         Pessoa pessoa2 = new Pessoa("Armando de Souza", "14566216756");
 
 
-        List<Pessoa> pessoas = new ArrayList<>();
+//        List<Pessoa> pessoas = new ArrayList<>();
+        Set<Pessoa> pessoas = new HashSet<>();
 
         pessoas.add(pessoa1);
         pessoas.add(pessoa2);
@@ -32,9 +35,9 @@ public class Aplicacao2 {
 
         Pessoa pessoa4 = new Pessoa("João da Silva", "14566216809");
 
-//        boolean existe = pessoas.contains(pessoa4);
-//        System.out.println(existe);
+        boolean existe = pessoas.contains(pessoa4);
+        System.out.println(existe);
 
-        System.out.println(pessoa1.equals(pessoa4));
+//        System.out.println(pessoa1.equals(pessoa4));
     }
 }

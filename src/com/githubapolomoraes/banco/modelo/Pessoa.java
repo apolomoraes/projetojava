@@ -2,6 +2,7 @@ package com.githubapolomoraes.banco.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Pessoa {
     private String nome;
@@ -67,14 +68,15 @@ public class Pessoa {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if(this == obj) return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pessoa pessoa = (Pessoa) o;
+        return Objects.equals(documento, pessoa.documento);
+    }
 
-        if(obj == null) return false;
-
-        if(this.getClass() != obj.getClass()) return false;
-
-        Pessoa pessoa = (Pessoa) obj;
-        return documento.equals(pessoa.documento);
+    @Override
+    public int hashCode() {
+        return Objects.hash(documento);
     }
 }
