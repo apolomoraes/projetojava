@@ -10,12 +10,15 @@ public class Aplicacao3 {
     public static void main(String[] args) {
         Banco banco = new Banco();
 
-        ToIntFunction<Conta> function = (Conta conta) -> {
-          return conta.getNumero();
-        };
+//        ToIntFunction<Conta> function = (Conta conta) -> {
+//          return conta.getNumero();
+//        };
 
 //        banco.getContas().sort(Comparator.comparingInt(new NumeroContaFunction()));
-        banco.getContas().sort(Comparator.comparingInt(function));
+//        banco.getContas().sort(Comparator.comparingInt((Conta conta) -> conta.getNumero()));
+//        banco.getContas().sort(Comparator.comparingInt(conta -> conta.getNumero()));
+
+        banco.getContas().sort(Comparator.comparingInt(Conta::getNumero));
 
 
         for (Conta conta : banco.getContas()) {
