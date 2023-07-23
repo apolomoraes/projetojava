@@ -30,4 +30,14 @@ public class Banco {
     }
 
     public List<Conta> getContas() { return contas; }
+
+    public Conta buscar(int agencia, int numeroConta) {
+        for (Conta conta : getContas()) {
+            if (conta.getAgencia() == agencia && conta.getNumero() == numeroConta) {
+                return conta;
+            }
+        }
+
+        return null;
+    }
 }
